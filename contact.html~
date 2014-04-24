@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<title> Footbal Fans Zone </title>
+		<link rel="stylesheet" type="text/css" href="style/style.css"/>
+		<script type="text/javascript" src="html5gallery/jquery.js"></script>
+		<script>
+			function display_popup(){
+
+				var form_filled = true;
+				$(".contact").each(function(index,elem){
+					if($(this).val() === "")
+						form_filled = false;
+				});
+				if(form_filled)
+				{
+					$("#form_message").html("Your message has been submited to us!");
+					$("#popup_container").css("display", "inline");
+				}
+				else
+				{
+				}
+					
+				return false;
+			}
+			$(document).ready(function(){
+			
+				$("#submit_button").click(display_popup);
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div id="main">
+			<div id="header">
+				<div id="logo">
+					<div id="logo_text">
+						<h1> <a href="index.html"> <span class="logo_colour"> Ultras Zone </span> </a> </h1>
+						<h2> Romanian Football Fans Community </h2>
+					</div>
+				</div>
+
+				<div id="menubar">
+					<ul id="menu">
+						<li> <a href="index.html"> Home </a> </li>
+						<li> <a href="teams.html"> Teams </a> </li>
+						<li> <a href="nationala.html"> National Team </a> </li>
+						<li> <a href="ultras.html"> About Ultras </a> </li>
+						<li class="selected"> <a href="contact.html"> Contact Us </a> </li>
+					</ul>			
+				</div>
+			</div>
+
+			<div id="content_header">
+			 	<div id="site_content">
+			 		<div id="banner_contact"></div>
+					<h1>Contact Us</h1>
+					<p style="color:white;">If you have some interesting content which you would want to see posted here do not hesitate to send us a message. </br>Also if you have sugestions feel free to tell us. </p>       
+					<div class="form_settings">
+						<p style="color:white;"><span>Name</span><input class="contact" type="text" name="your_name" value="" /></p>
+						<p style="color:white;"><span>Email Address</span><input class="contact" type="text" name="your_email" value="" /></p>
+						<p style="color:white;"><span>Message</span><textarea class="contact textarea" rows="8" cols="50" name="your_enquiry"></textarea></p>
+						<p style="padding-top: 15px">
+
+							<span>&nbsp;</span>
+							<input id="submit_button" class="submit" type="submit" name="contact_submitted" value="submit" >
+
+						</p>
+						<span id="popup_container" style="display:none;"><div id="form_message"></div></span>
+					</div>       
+				</div>
+			</div>
+
+			<div id="content_footer"></div>
+		    <div id="footer">
+				<p><a href="index.html">Home</a> | <a href="contact.html">Contact Us</a></p>
+				<p>Copyright &copy; Gherghe Alexandru </p>
+		    </div>
+		</div>
+	</body>
+</html>
